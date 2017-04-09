@@ -12,7 +12,7 @@ function moverSerpiente(event){
 		case 37: //izquierda
 		x = x-100;
 		if(x<0){
-			alert("borde");
+			terminaJuego();
 		}
 		serpiente.style.marginLeft = x + "px";
 		break;
@@ -20,7 +20,7 @@ function moverSerpiente(event){
 		case 38: //arriba
 		y = y-100;
 		if(y<0){
-			alert("borde");
+			terminaJuego();
 		}
 		serpiente.style.marginTop = y + "px";
 		break;
@@ -28,7 +28,7 @@ function moverSerpiente(event){
 		case 39: //derecha
 		x = x+100;
 		if(x>400){
-			alert("borde");
+			terminaJuego();
 		}
 		serpiente.style.marginLeft = x + "px";
 		break;
@@ -36,7 +36,7 @@ function moverSerpiente(event){
 		case 40: //abajo
 		y = y+100;
 		if(y>400){
-			alert("borde");
+			terminaJuego();
 		}
 		serpiente.style.marginTop = y + "px";
 		break;
@@ -45,4 +45,10 @@ function moverSerpiente(event){
 		alert("La serpiente solo se mueve con las fechas");
 		break;
 	}
+}
+
+
+function terminaJuego(){
+	alert("Game Over")
+	document.removeEventListener("keydown",moverSerpiente);
 }
