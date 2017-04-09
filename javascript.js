@@ -1,6 +1,10 @@
 var serpiente = document.getElementById("serpiente");
 document.addEventListener("keydown", moverSerpiente);
 
+var reiniciar = document.getElementById("reiniciar");
+document.addEventListener("click", reiniciarJuego);
+
+
 var x = 0;
 var y = 0;
 
@@ -51,4 +55,12 @@ function moverSerpiente(event){
 function terminaJuego(){
 	alert("Game Over")
 	document.removeEventListener("keydown",moverSerpiente);
+}
+
+function reiniciarJuego(){
+	x=0
+	y=0
+	serpiente.style.marginLeft = x + "px";
+	serpiente.style.marginTop = y + "px";
+	document.addEventListener("keydown",moverSerpiente);
 }
